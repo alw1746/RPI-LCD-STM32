@@ -34,19 +34,19 @@ Upload method: STLink
   Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
 
 **//Control pins |RS |CS |RST|**  
-**#define TFT_CNTRL      GPIOA**  
-**#define TFT_RST        PA1**  
-**#define TFT_RS         PA0**  
-**#define TFT_CS         PA4**    
+**#define TFT_CNTRL      GPIOA  
+#define TFT_RST        PA1  
+#define TFT_RS         PA0  
+#define TFT_CS         PA4**
 
 In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
 
   **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**
 
 ### XPT2046 touchscreen driver
-  Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen
-  Configure PA3 as CS1:
-  #define TS_CS_PIN  PA3
+  Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen  
+  Configure PA3 as CS1:  
+  **#define TS_CS_PIN  PA3**
 
 The Arduino sketches should be run in the following order:
 
