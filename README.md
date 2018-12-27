@@ -3,14 +3,13 @@ Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm
   ![STM32F103C8T6](/images/bluepill.png)
   ![RPI 3.5 inch LCD](/images/LCD.png)
 
-The LCD plugs into the RPi's GPIO header(starting at pin 1) using a shortened socket.
-The connections used are 5V, Gnd and the SPI pins.
+The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. The connections are 5V, Gnd and the SPI pins.
 
 ## Wiring diagram:
   ![LCD_STM32 wiring](/images/Schematic.png)
   
-The FTDI USB-serial adapter is only used for debug output. 
-  ![USB-serial adapter](/images/USBSerialAdapter.PNG)
+The FTDI USB-serial adapter is only used for debug output.  
+  ![USB-serial adapter](/images/USBSerialAdapter.png)
 
 The Serial port must be redirected to Serial1 in the application
 sketches:
