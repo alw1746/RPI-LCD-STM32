@@ -1,7 +1,9 @@
 # RPI-LCD-STM32
 Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm32duino using SPI.
+  ![STM32F103C8T6](/images/bluepill.png)
+  ![RPI 3.5 inch LCD](/images/LCD.png)
 
-The Raspberry Pi 3.5 inch LCD uses SPI to communicate with the RPi. The LCD plugs into the RPi using a shortened GPIO socket.
+The LCD plugs into the RPi's GPIO header(starting at pin 1) using a shortened socket.
 The connections used are 5V, Gnd and the SPI pins.
 
 ## Wiring diagram:
@@ -17,7 +19,7 @@ sketches:
 
 Programming the STM32 is done through the ST-LINK V2 adapter.
 
-![ST-LINK V2](/images/stlinkv2.jpg)
+![ST-LINK V2](/images/stlinkv2.png)
 
 ## Configure the Arduino IDE as:
 
