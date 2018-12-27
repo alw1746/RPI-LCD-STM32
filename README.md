@@ -16,6 +16,7 @@ sketches:
   **#define Serial Serial1**
 
 Programming the STM32 is done through the ST-LINK V2 adapter.
+
 ![ST-LINK V2](/images/stlinkv2.jpg)
 
 ## Configure the Arduino IDE as:
