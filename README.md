@@ -7,7 +7,7 @@ The connections used are 5V, Gnd and the SPI pins.
 Wiring diagram:
   ![LCD_STM32 wiring](/images/Schematic.png)
   
-The USB serial port adapter is only used for debug output. The Serial port must be redirected to Serial1 in the application
+The FTDI USB-serial port adapter is only used for debug output. The Serial port must be redirected to Serial1 in the application
 sketches:
   #define Serial Serial1
 
@@ -43,6 +43,8 @@ XPT2046 touchscreen driver
 The Arduino sketches should be run in the following order:
 
 1. graphictest - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct.
+![graphictest output](/images/graphictest.jpg)
+
 2. LCDcalibrate - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.
 3. TSpaint - enhanced version of Adafruit's touchscreen painter.
 
