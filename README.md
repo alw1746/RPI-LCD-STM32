@@ -5,7 +5,7 @@ The Raspberry Pi 3.5 inch LCD uses SPI to communicate with the RPi. The LCD plug
 The connections used are 5V, Gnd and the SPI pins.
 
 Wiring diagram:
-  ![LCD_STM32 wiring](/images/SChematic.png)
+  ![LCD_STM32 wiring](/images/Schematic.png)
   
 The USB serial port adapter is only used for debug output. The Serial port must be redirected to Serial1 in the application
 sketches:
