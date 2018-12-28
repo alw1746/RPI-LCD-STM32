@@ -16,7 +16,7 @@ sketches:
 
   **#define Serial Serial1**
 
-The STM32 is programmed by selecting the STLink as the upload method in the Arduino IDE.
+The STM32 is programmed by using STLink as the upload method in the Arduino IDE.
 
 ![ST-LINK V2](/images/stlinkv2.png)
 
@@ -53,8 +53,13 @@ In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
 
 The Arduino sketches should be run in the following order:
 
-1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct.
+1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct.  
 ![graphictest output](/images/graphictest.jpg)
 
-2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.
-3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.
+2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.  
+![LCDcalibrate output](/images/graphictest.jpg)
+
+3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.  
+![TSpaint output](/images/graphictest.jpg)
+
+
