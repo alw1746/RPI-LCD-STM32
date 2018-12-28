@@ -59,6 +59,12 @@ The sketches should be run in the following order to test and obtain information
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.  
+**#define TS_MINX 180    //derived from touchscreen calibration  
+#define TS_MINY 250  
+#define TS_MAXX 3900  
+#define TS_MAXY 3900  
+#define TS_MINZ 800  
+#define TS_MAXZ 2000**  
 ![TSpaint output](/images/TSpaint.jpg)
 
 
