@@ -46,8 +46,7 @@ In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
   **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**
 
 ### XPT2046 touchscreen driver
-  Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen  
-  Configure touchscreen slave select pin in TSpaint.ino:
+  Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen and configure touchscreen slave select pin in TSpaint.ino:
 
   **#define TS_CS_PIN  PA3**
 
