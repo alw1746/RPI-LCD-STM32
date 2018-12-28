@@ -52,10 +52,10 @@ In Adafruit_ILI9486_STM32.cpp, set SPISettings(32000000) in line 15.
 ## Arduino application sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
-1. **graphictest.ino** - generate test patterns on the LCD(see video). This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
+1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD. Plug these values into TSpaint.  
+2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the four corners of the LCD with low/high strength. Plug these values into TSpaint.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.  
