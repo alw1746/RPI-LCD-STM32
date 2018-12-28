@@ -11,16 +11,15 @@ The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](/images/USBSerialAdapter.png)
 
-The Serial port must be redirected to Serial1 in the application
-sketches:
+Redirect Serial to Serial1 in the application sketches.
 
   **#define Serial Serial1**
 
-The STM32 is programmed by using STLink as the upload method in the Arduino IDE.
+The STM32 is programmed using a cheap ST-Link device found in ebay.
 
 ![ST-LINK V2](/images/stlinkv2.png)
 
-## Configure the Arduino IDE as:
+### Configure the Arduino IDE with STLink as the upload method.
 
 Board: Generic STM32F103C series  
 Variant: STM32F103C8 (20k RAM. 128k Flash)  
@@ -50,10 +49,10 @@ In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
 
   **#define TS_CS_PIN  PA3**
 
-The Arduino sketches should be run in the following order:
+## The Arduino sketches should be run in the following order:
 
-1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct.  
-[![graphictest output](https://img.youtube.com/vi/hBzeoJun87o/0.jpg)](https://www.youtube.com/watch?v=hBzeoJun87o?t=3) 
+1. **graphictest.ino** - generate test patterns on the LCD(see video). This verifies LCD-STM32 wiring is correct.  
+[![graphictest output](https://img.youtube.com/vi/hBzeoJun87o/0.jpg)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
 2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
