@@ -53,7 +53,7 @@ In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
 The LCD sketches should be run in the following order to test and obtain information.
 
 1. **graphictest.ino** - generate test patterns on the LCD(see video). This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
-[![graphictest output](https://img.youtube.com/vi/hBzeoJun87o/0.jpg)](https://www.youtube.com/embed/hBzeoJun87o)
+[![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
 2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
