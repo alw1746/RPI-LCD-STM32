@@ -6,7 +6,7 @@ Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm
 The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. The connections are 5V, Gnd and the SPI pins.
 
 ## Wiring diagram
-  ![LCD_STM32 wiring](/images/Schematic.png)
+  ![LCD_STM32 wiring](/images/Wiring.png)
   
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](/images/USBSerialAdapter.png)
@@ -55,12 +55,12 @@ The sketches should be run in the following order to test and obtain information
 1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the four corners of the LCD with low/high strength. Plug these values into TSpaint.  
+2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the 4 corners of the LCD with low/high strength. Plug these values into TSpaint. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
-3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.
+3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter. Using values from LCDcalibrate,
 
-**#define TS_MINX 180    //derived from LCDcalibrate  
+**#define TS_MINX 180
 #define TS_MINY 250  
 #define TS_MAXX 3900  
 #define TS_MAXY 3900  
