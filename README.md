@@ -5,7 +5,7 @@ Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm
 
 The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. The connections are 5V, Gnd and the SPI pins.
 
-## Wiring diagram:
+## Wiring diagram
   ![LCD_STM32 wiring](/images/Schematic.png)
   
 The FTDI USB-serial adapter is only used for debug output.  
@@ -49,9 +49,10 @@ In Adafruit_ILI9486_STM32.cpp, set to SPISettings(32000000) in line 15:
 
   **#define TS_CS_PIN  PA3**
 
-## The Arduino sketches should be run in the following order:
+## Arduino application sketches
+The LCD sketches should be run in the following order to test and obtain information.
 
-1. **graphictest.ino** - generate test patterns on the LCD(see video). This verifies LCD-STM32 wiring is correct.  
+1. **graphictest.ino** - generate test patterns on the LCD(see video). This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.
 [![graphictest output](https://img.youtube.com/vi/hBzeoJun87o/0.jpg)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
 2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.  
