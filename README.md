@@ -58,13 +58,15 @@ The sketches should be run in the following order to test and obtain information
 2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the four corners of the LCD with low/high strength. Plug these values into TSpaint.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
-3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.  
-**#define TS_MINX 180    //derived from touchscreen calibration  
+3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.
+
+**#define TS_MINX 180    //derived from LCDcalibrate  
 #define TS_MINY 250  
 #define TS_MAXX 3900  
 #define TS_MAXY 3900  
 #define TS_MINZ 800  
-#define TS_MAXZ 2000**  
+#define TS_MAXZ 2000**
+
 ![TSpaint output](/images/TSpaint.jpg)
 
 
