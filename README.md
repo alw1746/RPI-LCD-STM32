@@ -57,9 +57,9 @@ The Arduino sketches should be run in the following order:
 ![graphictest output](/images/graphictest.png)
 
 2. **LCDcalibrate.ino** - display the boundary and pressure limits(min/max) of the LCD. Plug these values into TSpaint.  
-![LCDcalibrate output](/images/graphictest.png)
+![LCDcalibrate output](/images/LCDcalibrate.png)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter.  
-![TSpaint output](/images/graphictest.png)
+![TSpaint output](/images/TSpaint.png)
 
 
