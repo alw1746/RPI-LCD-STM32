@@ -1,6 +1,8 @@
 /***************************************************************
 Touchscreen paint: screen painting application derived from Adafruit
-example. Enhanced with more colour selection, clear screen and 
+touchpaint example in https://github.com/adafruit/Adafruit_ILI9341.
+
+Enhanced with more colour selection, clear screen and 
 variable pen widths using a pressure-sensing zone on the screen.
 Also allow for fine width selection through up/down arrows.
 
