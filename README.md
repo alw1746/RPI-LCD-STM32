@@ -3,23 +3,27 @@ Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm
   ![STM32F103C8T6](/images/bluepill.png)
   ![RPI 3.5 inch LCD](/images/LCD.png)
 
-The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. The connections are 5V, Gnd and the SPI pins.
+The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. Socket numbering refers to when LCD is viewed from the PCB side.
+2   1  
+4   3  
+  :  
+26  25
 
 ## Wiring diagram
   ![LCD_STM32 wiring](/images/Wiring.png)
-### LCD female header
-|Pin|Usage| 
-|---|-----|
-|2  |5V   |  
-|6  |GND  |
-|18 |RS   |
-|19 |MOSI |
-|21 |MISO |
-|22 |RST  |
-|23 |SCK  |
-|24 |CS0  |
-|26 |CS1  |      
-  
+### Pin Connections
+|STM32 Pin|LCD Skt|Name |
+|---------|-------|-----|
+|5V       |2      |5V   |
+|GND      |6      |GND  |
+|PA0      |18     |RS   |
+|PA7      |19     |MOSI |
+|PA6      |21     |MISO |
+|PA1      |22     |RST  |
+|PA5      |23     |SCK  |
+|PA4      |24     |CS0  |
+|PA3      |26     |CS1  |  
+
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](/images/USBSerialAdapter.png)
 
