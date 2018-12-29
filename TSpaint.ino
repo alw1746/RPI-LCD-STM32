@@ -57,8 +57,8 @@ void setup()
     Serial.println("Couldn't start touchscreen controller");
     while (1);
   }
-  ts.setRotation(1);    //portrait mode
-  tft.setRotation(1);   //portrait mode
+  ts.setRotation(1);    //landscape mode
+  tft.setRotation(1);   //landscape mode
   tft.setTextColor(WHITE);
   tft.setTextSize(2);
   tft.setCursor(0, 0);
