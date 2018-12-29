@@ -1,5 +1,5 @@
 /***************************************************
-TScalibrate: obtain calibration values for LCD. These are:
+LCDcalibrate: obtain calibration values for LCD. These are:
  min X,Y,Z
  max X,Y,Z
 Z=pressure value of touch screen.
