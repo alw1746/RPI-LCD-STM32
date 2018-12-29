@@ -50,9 +50,9 @@ Upload method: STLink
 ### Adafruit ILI9486 STM32 driver
 - Copy /libraries/Adafruit_ILI9486_STM32 to your .../Arduino/libraries folder.
 - Original code at https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
-- Cusomise line 15 of Adafruit_ILI9486_STM32.cpp.
+- Change line 15 of Adafruit_ILI9486_STM32.cpp.  
 **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(24000000)), _trans(0) {}**  
-Customise Adafruit_ILI9486_STM32.h according to wiring diagram.  
+- Change Adafruit_ILI9486_STM32.h according to wiring diagram.  
   **//Control pins |RS |CS |RST|  
   #define TFT_CNTRL      GPIOA  
   #define TFT_RST        PA1  
@@ -72,18 +72,18 @@ The sketches should be run in the following order to test and obtain information
 
 2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the define below.  
 
-**#define CS_PIN  PA3**  
+  **#define CS_PIN  PA3**  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320).
 
-**#define TS_CS_PIN PA3  
-#define TS_MINX 180  
-#define TS_MINY 250  
-#define TS_MAXX 3900  
-#define TS_MAXY 3900  
-#define TS_MINZ 800  
-#define TS_MAXZ 2000**
+  **#define TS_CS_PIN PA3  
+  #define TS_MINX 180  
+  #define TS_MINY 250  
+  #define TS_MAXX 3900  
+  #define TS_MAXY 3900  
+  #define TS_MINZ 800  
+  #define TS_MAXZ 2000**
 
 ![TSpaint output](/images/TSpaint.jpg)
 
