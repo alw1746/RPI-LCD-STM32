@@ -43,31 +43,28 @@ Variant: STM32F103C8 (20k RAM. 128k Flash)
 CPU Speed(MHZ): 72Mhz (Normal)  
 Upload method: STLink
 
-## Prerequisite software to drive the display
+## Software Installation
 
 ### Adafruit GFX library
 - Install from the Arduino library manager.
 ### Adafruit ILI9486 STM32 driver
-- Download from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
-- Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to wiring diagram.
-
+- Copy /libraries/Adafruit_ILI9486_STM32 to your .../Arduino/libraries folder.
+- Original code at https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
+- Cusomise line 15 of Adafruit_ILI9486_STM32.cpp.
+**Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(24000000)), _trans(0) {}**  
+Customise Adafruit_ILI9486_STM32.h according to wiring diagram.  
   **//Control pins |RS |CS |RST|  
   #define TFT_CNTRL      GPIOA  
   #define TFT_RST        PA1  
   #define TFT_RS         PA0  
   #define TFT_CS         PA4**
 
-- Edit Adafruit_ILI9486_STM32.cpp and set SPISettings(32000000) in line 15.
-
-  **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**
-
 ### XPT2046 touchscreen driver
-- Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen.
-- configure touchscreen slave select pin in TSpaint.ino:
+- Copy /libraries/XPT2046_touchscreen to your .../Arduino/libraries folder.
+- Original code at https://github.com/PaulStoffregen/XPT2046_Touchscreen
+- XPT2046_Touchscreen::update() has been modified to align the rotation function with tft.setRotation(1).
 
-  **#define TS_CS_PIN  PA3**  
-- Modify XPT2046_Touchscreen::update() to handle the rotation function similar to tft.setRotation(1). See code at end of XPT2046_Touchscreen.cpp
-## Arduino application sketches
+### Arduino Sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
 1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
