@@ -51,11 +51,11 @@ Upload method: STLink
 - Download from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
 - Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
 
-**//Control pins |RS |CS |RST|**  
-**#define TFT_CNTRL      GPIOA  
-#define TFT_RST        PA1  
-#define TFT_RS         PA0  
-#define TFT_CS         PA4**
+  **//Control pins |RS |CS |RST|  
+  **#define TFT_CNTRL      GPIOA  
+  #define TFT_RST        PA1  
+  #define TFT_RS         PA0  
+  #define TFT_CS         PA4**
 
 - Edit Adafruit_ILI9486_STM32.cpp and set SPISettings(32000000) in line 15.
 
