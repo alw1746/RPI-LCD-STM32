@@ -1,16 +1,17 @@
 # RPI-LCD-STM32
-Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm32duino using SPI.
+This project shows how to interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) running stm32duino using SPI. The LCD  normally plugs into the RPi's GPIO header(pin 1-26) via a short female header on the back of the display. But in this case, jumper wires are used to connect the 2 devices together. LCD driver software are used together with Arduino sketches to test and show the  workings of the LCD.  
   ![STM32F103C8T6](/images/bluepill.png)
   ![RPI 3.5 inch LCD](/images/LCD.png)
-
-The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. Socket numbering refers to when LCD is viewed from the PCB side.  
-2   1  
-4   3  
-  :  
-26  25
-
 ## Wiring diagram
   ![LCD_STM32 wiring](/images/Wiring.png)
+
+The female header is numbered according to layout below(view from back of display). They correspond directly to the GPIO header pins on a Raspberry Pi board when plugged together.
+<pre>
+ 2   1
+ 4   3
+  :
+26  25
+</pre>
 ### Pin Connections
 |STM32 Pin|LCD Skt|Name |
 |---------|-------|-----|
@@ -45,10 +46,10 @@ Upload method: STLink
 ## Prerequisite software to drive the display
 
 ### Adafruit GFX library
-  Install from the Arduino library manager.
+- Install from the Arduino library manager.
 ### Adafruit ILI9486 STM32 driver
-  Download from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
-  Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
+- Download from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
+- Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
 
 **//Control pins |RS |CS |RST|**  
 **#define TFT_CNTRL      GPIOA  
@@ -56,28 +57,31 @@ Upload method: STLink
 #define TFT_RS         PA0  
 #define TFT_CS         PA4**
 
-In Adafruit_ILI9486_STM32.cpp, set SPISettings(32000000) in line 15.
+- Edit Adafruit_ILI9486_STM32.cpp and set SPISettings(32000000) in line 15.
 
   **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**
 
 ### XPT2046 touchscreen driver
-  Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen and configure touchscreen slave select pin in TSpaint.ino:
+- Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen.  
+- configure touchscreen slave select pin in TSpaint.ino:
 
-  **#define TS_CS_PIN  PA3**
-
+  **#define TS_CS_PIN  PA3**  
+  - Modify XPT2046_Touchscreen::update() to handle the rotation function similar to tft.setRotation(1). See code at end of XPT2046_Touchscreen.cpp
 ## Arduino application sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
 1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge.  
+2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the define below.  
+
+**#define CS_PIN  PA3**  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320).
 
-**#define TS_CS_PIN PA3
-#define TS_MINX 180
+**#define TS_CS_PIN PA3  
+#define TS_MINX 180  
 #define TS_MINY 250  
 #define TS_MAXX 3900  
 #define TS_MAXY 3900  
