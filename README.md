@@ -9,7 +9,7 @@ The female header is numbered according to layout below(view from back of displa
 <pre>
  2   1
  4   3
-  :
+ :   :
 26  25
 </pre>
 ### Pin Connections
