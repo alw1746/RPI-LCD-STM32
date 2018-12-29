@@ -1,5 +1,5 @@
 # RPI-LCD-STM32
-Interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) running stm32duino using SPI. The LCD  normally plugs into the RPi's GPIO header(pin 1-26) via a short female header on the back of the display. But in this case, jumper wires are used to connect the 2 devices together. LCD driver software are used together with Arduino sketches to test and show the  workings of the LCD.  
+Interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) with stm32duino and SPI. The LCD  normally plugs into the RPi's GPIO header(pin 1-26) via a short female header on the back of the display. But in this case, jumper wires are used to connect the 2 devices together. LCD driver software are used together with Arduino sketches to test and show the  workings of the LCD.  
   ![STM32F103C8T6](/images/bluepill.png)
   ![RPI 3.5 inch LCD](/images/LCD.png)
 ## Wiring diagram
@@ -44,7 +44,9 @@ CPU Speed(MHZ): 72Mhz (Normal)
 Upload method: STLink
 
 ## Software Installation
-
+###STM32duino
+- STM32duino is an Arduino Core for the Maple Mini and other STM32 F1 and F4 boards.
+- See https://wiki.stm32duino.com/index.php?title=Installation for installation details.
 ### Adafruit GFX library
 - Install from the Arduino library manager.
 ### Adafruit ILI9486 STM32 driver
