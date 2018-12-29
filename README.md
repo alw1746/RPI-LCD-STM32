@@ -7,6 +7,17 @@ The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female
 
 ## Wiring diagram
   ![LCD_STM32 wiring](/images/Wiring.png)
+### LCD female header
+Pin  Description  
+**2    5V  
+6    GND  
+18   RS  
+19   MOSI  
+21   MISO  
+22   RST  
+23   SCK  
+24   CS0  
+26   CS1**
   
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](/images/USBSerialAdapter.png)
