@@ -3,7 +3,7 @@ Interfacing a Raspberry Pi 3.5 inch LCD to STM32F103C8T6 (blue pill) running stm
   ![STM32F103C8T6](/images/bluepill.png)
   ![RPI 3.5 inch LCD](/images/LCD.png)
 
-The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. Socket numbering refers to when LCD is viewed from the PCB side.
+The LCD normally plugs into the RPi's GPIO header(pin 1-26) using a short female socket. But in this project, the LCD is connected to the STM32F103C8T6 pins using jumper wires. Socket numbering refers to when LCD is viewed from the PCB side.  
 2   1  
 4   3  
   :  
