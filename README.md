@@ -55,12 +55,13 @@ The sketches should be run in the following order to test and obtain information
 1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the 4 corners of the LCD with low/high strength. Plug these values into TSpaint. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge.  
+2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge.  
 ![LCDcalibrate output](/images/LCDcalibrate.jpg)
 
-3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter. Using values from LCDcalibrate,
+3. **TSpaint.ino** - enhanced version of Adafruit's touchscreen painter. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320).
 
-**#define TS_MINX 180
+**#define TS_CS_PIN PA3
+#define TS_MINX 180
 #define TS_MINY 250  
 #define TS_MAXX 3900  
 #define TS_MAXY 3900  
