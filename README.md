@@ -62,11 +62,11 @@ Upload method: STLink
   **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**
 
 ### XPT2046 touchscreen driver
-- Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen.  
+- Download from https://github.com/PaulStoffregen/XPT2046_Touchscreen.
 - configure touchscreen slave select pin in TSpaint.ino:
 
   **#define TS_CS_PIN  PA3**  
-  - Modify XPT2046_Touchscreen::update() to handle the rotation function similar to tft.setRotation(1). See code at end of XPT2046_Touchscreen.cpp
+- Modify XPT2046_Touchscreen::update() to handle the rotation function similar to tft.setRotation(1). See code at end of XPT2046_Touchscreen.cpp
 ## Arduino application sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
