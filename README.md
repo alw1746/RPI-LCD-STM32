@@ -44,7 +44,7 @@ CPU Speed(MHZ): 72Mhz (Normal)
 Upload method: STLink
 
 ## Software Installation
-###STM32duino
+### STM32duino
 - STM32duino is an Arduino Core for the Maple Mini and other STM32 F1 and F4 boards.
 - See https://wiki.stm32duino.com/index.php?title=Installation for installation details.
 ### Adafruit GFX library
