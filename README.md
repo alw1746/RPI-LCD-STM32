@@ -62,7 +62,7 @@ Upload method: STLink
 ### XPT2046 touchscreen driver
 - Copy /libraries/XPT2046_touchscreen to your .../Arduino/libraries folder.
 - Original code at https://github.com/PaulStoffregen/XPT2046_Touchscreen
-- XPT2046_Touchscreen::update() has been modified to align the rotation function with tft.setRotation(1).
+- XPT2046_Touchscreen::update() has been modified to align the rotation function with GFX's setRotation(1).
 
 ### Arduino Sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
