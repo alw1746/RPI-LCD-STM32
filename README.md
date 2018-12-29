@@ -49,7 +49,7 @@ Upload method: STLink
 - Install from the Arduino library manager.
 ### Adafruit ILI9486 STM32 driver
 - Download from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
-- Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
+- Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to wiring diagram.
 
   **//Control pins |RS |CS |RST|  
   #define TFT_CNTRL      GPIOA  
