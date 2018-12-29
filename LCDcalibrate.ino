@@ -3,6 +3,8 @@ TScalibrate: obtain calibration values for LCD. These are:
  min X,Y,Z
  max X,Y,Z
 Z=pressure value of touch screen.
+
+Derived from https://github.com/PaulStoffregen/XPT2046_Touchscreen/blob/master/examples/TouchTest/TouchTest.ino
 ****************************************************/
  
 #include "Adafruit_ILI9486_STM32.h"
