@@ -52,7 +52,7 @@ Upload method: STLink
 - Edit Adafruit_ILI9486_STM32.h and adjust the parameters below according to schematic.
 
   **//Control pins |RS |CS |RST|  
-  **#define TFT_CNTRL      GPIOA  
+  #define TFT_CNTRL      GPIOA  
   #define TFT_RST        PA1  
   #define TFT_RS         PA0  
   #define TFT_CS         PA4**
