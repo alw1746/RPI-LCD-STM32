@@ -1,9 +1,9 @@
 # RPI-LCD-STM32
 Interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) with stm32duino and SPI. The LCD  normally plugs into the RPi's GPIO header(pin 1-26) via a short female header on the back of the display. But in this case, jumper wires are used to connect the 2 devices together. LCD driver software are used together with Arduino sketches to test and show the  workings of the LCD.  
-  ![STM32F103C8T6](/images/bluepill.png)
-  ![RPI 3.5 inch LCD](/images/LCD.png)
+  ![STM32F103C8T6](images/bluepill.png)
+  ![RPI 3.5 inch LCD](images/LCD.png)
 ## Wiring diagram
-  ![LCD_STM32 wiring](/images/Wiring.png)
+  ![LCD_STM32 wiring](images/Wiring.png)
 
 The female header is numbered according to layout below(view from back of display). They correspond directly to the GPIO header pins on a Raspberry Pi board when plugged together.
 <pre>
@@ -26,7 +26,7 @@ The female header is numbered according to layout below(view from back of displa
 |PA3      |26     |CS1  |  
 
 The FTDI USB-serial adapter is only used for debug output.  
-  ![USB-serial adapter](/images/USBSerialAdapter.png)
+  ![USB-serial adapter](images/USBSerialAdapter.png)
 
 Redirect Serial to Serial1 in the application sketches.
 
@@ -34,7 +34,7 @@ Redirect Serial to Serial1 in the application sketches.
 
 The STM32 is programmed using a cheap ST-Link device found in ebay.
 
-![ST-LINK V2](/images/stlinkv2.png)
+![ST-LINK V2](images/stlinkv2.png)
 
 ### Configure the Arduino IDE with STLink as the upload method.
 
@@ -70,13 +70,13 @@ Upload method: STLink
 The sketches should be run in the following order to test and obtain information about the LCD.
 
 1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
-[![graphictest output](/images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
+[![graphictest output](images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
 2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the define below.  
 
    **#define CS_PIN  PA3**
 
-![LCDcalibrate output](/images/LCDcalibrate.jpg)
+![LCDcalibrate output](images/LCDcalibrate.jpg)
 
 3. **TSpaint.ino** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
 
@@ -88,6 +88,6 @@ The sketches should be run in the following order to test and obtain information
    #define TS_MINZ 800  
    #define TS_MAXZ 2000**
 
-![TSpaint output](/images/TSpaint.jpg)
+![TSpaint output](images/TSpaint.jpg)
 
 
