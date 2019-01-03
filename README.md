@@ -50,7 +50,7 @@ Upload method: STLink
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
-- Copy /libraries/Adafruit_ILI9486_STM32 to your .../Arduino/libraries folder.
+- Unzip libraries/Adafruit_ILI9486_STM32.zip to your .../Arduino/libraries folder.
 - Original code at https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
 - Line 15 of Adafruit_ILI9486_STM32.cpp has been modified to:  
 **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**  
@@ -62,7 +62,7 @@ Upload method: STLink
   #define TFT_CS         PA4**
 
 ### XPT2046 touchscreen driver
-- Copy /libraries/XPT2046_touchscreen to your .../Arduino/libraries folder.
+- unzip libraries/XPT2046_touchscreen.zip to your .../Arduino/libraries folder.
 - Original code at https://github.com/PaulStoffregen/XPT2046_Touchscreen
 - XPT2046_Touchscreen::update() has been modified to align the rotation function with GFX's setRotation(1).
 
