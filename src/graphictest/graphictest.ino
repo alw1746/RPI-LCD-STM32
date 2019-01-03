@@ -1,5 +1,5 @@
 /***************************************************
-  Derived from https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver/tree/master/examples/graphicstest
+  Derived from http://stm32duino.com/download/file.php?id=2930
   
   This is our GFX example for the Adafruit ILI9341 Breakout and Shield
   ----> http://www.adafruit.com/products/1651
