@@ -3,8 +3,8 @@ How to render markdown with local images in a browser
 -Install the Markdown Viewer extension in Google Chrome.
 -Enable the "Allow access to file URLs" option.
 
--Download and unzip branch to a folder eg. C:\Temp.
--Browse to where README.md is located and open with Google Chrome.
+-Download and unzip repository to a folder.
+-Browse to README.md and open with Google Chrome.
 
 -README.md will be displayed in raw mode initially.
 -click the "m" icon on the toolbar and file will be rendered nicely.
