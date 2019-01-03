@@ -1,5 +1,5 @@
-How to show README.md with local images in a browser
-----------------------------------------------------
+How to render markdown with local images in a browser
+-----------------------------------------------------
 -Install the Markdown Viewer extension in Google Chrome.
 
 -Enable the "Allow access to file URLs" option.
@@ -8,4 +8,4 @@ How to show README.md with local images in a browser
 
 -README.md will be displayed in raw mode initially.
 
--click the "m" icon on the toolbar and the file will be rendered nicely.
+-click the "m" icon on the toolbar and file will be rendered nicely.
