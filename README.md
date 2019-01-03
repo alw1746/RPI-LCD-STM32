@@ -6,12 +6,12 @@ Interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) with stm32
   ![LCD_STM32 wiring](images/Wiring.png)
 
 The female header is numbered according to layout below(view from back of display). They correspond directly to the GPIO header pins on a Raspberry Pi board when plugged together.
-<pre>
- 2   1
- 4   3
- :   :
-26  25
-</pre>
+
+      2   1
+      4   3
+      :   :
+     26  25
+
 ### Pin Connections
 |STM32 Pin|LCD Skt|Name |
 |---------|-------|-----|
