@@ -51,7 +51,7 @@ Upload method: STLink
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
 - Unzip libraries/Adafruit_ILI9486_STM32.zip to your .../Arduino/libraries folder.
-- Original code at https://github.com/palmerr23/STM32F01-ILI9486-RPi-Driver
+- Original code at http://stm32duino.com/download/file.php?id=2930
 - Line 15 of Adafruit_ILI9486_STM32.cpp has been modified to:  
 **Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**  
 - Customise Adafruit_ILI9486_STM32.h according to your wiring diagram.  
