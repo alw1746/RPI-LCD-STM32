@@ -64,16 +64,16 @@ Upload method: STLink
 ### Arduino Sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
-1. **![graphicstest.ino](/Adafruit_ILI9486_STM32/examples/graphicstest/graphicstest.ino)** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
+1. **[graphicstest.ino](https://github.com/alw1746/Adafruit_ILI9486_STM32/examples/graphicstest/graphicstest.ino)** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **![LCDcalibrate.ino](XPT2046_Touchscreen/examples/LCDcalibrate/LCDcalibrate.ino)** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the pin definition if required:  
+2. **[LCDcalibrate.ino](https://github.com/alw1746/XPT2046_Touchscreen/examples/LCDcalibrate/LCDcalibrate.ino)** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the pin definition if required:  
 
    **#define CS_PIN  PA3**
 
 ![LCDcalibrate output](images/LCDcalibrate.jpg)
 
-3. **![TSpaint,ino](XPT2046_Touchscreen/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
+3. **[TSpaint,ino](https://github.com/alw1746/XPT2046_Touchscreen/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
 
    **#define TS_CS_PIN PA3  
    #define TS_MINX 180  
