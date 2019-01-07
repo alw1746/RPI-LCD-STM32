@@ -50,10 +50,7 @@ Upload method: STLink
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
-- Unzip libraries/Adafruit_ILI9486_STM32.zip to your .../Arduino/libraries folder.
-- Original code at http://stm32duino.com/download/file.php?id=2930
-- Line 15 of Adafruit_ILI9486_STM32.cpp has been modified to:  
-**Adafruit_ILI9486_STM32::Adafruit_ILI9486_STM32(void) : Adafruit_GFX(TFTWIDTH, TFTHEIGHT), spiSet(SPISettings(32000000)), _trans(0) {}**  
+- Clone https://github.com/alw1746/Adafruit_ILI9486_STM32 and unzip to your .../Arduino/libraries folder.
 - Customise Adafruit_ILI9486_STM32.h according to your wiring diagram.  
   **//Control pins |RS |CS |RST|  
   #define TFT_CNTRL      GPIOA  
@@ -62,23 +59,21 @@ Upload method: STLink
   #define TFT_CS         PA4**
 
 ### XPT2046 touchscreen driver
-- unzip libraries/XPT2046_touchscreen.zip to your .../Arduino/libraries folder.
-- Original code at https://github.com/PaulStoffregen/XPT2046_Touchscreen
-- XPT2046_Touchscreen::update() has been modified to align the rotation function with GFX's setRotation(1).
+- Clone https://github.com/alw1746/XPT2046_Touchscreen and unzip to your .../Arduino/libraries folder.
 
 ### Arduino Sketches
 The sketches should be run in the following order to test and obtain information about the LCD.
 
-1. **graphictest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
+1. **Adafruit_ILI9486_STM32/examples/graphicstest/graphicstest.ino** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
 [![graphictest output](images/grtestvid.png)](https://www.youtube.com/watch?v=hBzeoJun87o&t=2s)
 
-2. **LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the define below.  
+2. **XPT2046_Touchscreen/examples/LCDcalibrate/LCDcalibrate.ino** - obtain the screen boundary(x,y) and touch pressure(z) extrema of the LCD by poking the top left/bottom right  corners of the LCD with low/high strength. Home(0,0) is the top left corner in landscape mode, X-axis is the top edge and Y-axis is the left edge. Change the pin definition if required:  
 
    **#define CS_PIN  PA3**
 
 ![LCDcalibrate output](images/LCDcalibrate.jpg)
 
-3. **TSpaint.ino** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
+3. **XPT2046_Touchscreen/examples/TSpaint/TSpaint.ino** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
 
    **#define TS_CS_PIN PA3  
    #define TS_MINX 180  
