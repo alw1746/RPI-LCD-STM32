@@ -73,7 +73,7 @@ The sketches should be run in the following order to test and obtain information
 
 ![LCDcalibrate output](images/LCDcalibrate.jpg)
 
-3. **[TSpaint,ino](https://github.com/alw1746/XPT2046_Touchscreen/blob/master/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
+3. **[TSpaint.ino](https://github.com/alw1746/XPT2046_Touchscreen/blob/master/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
 
    **#define TS_CS_PIN PA3  
    #define TS_MINX 180  
