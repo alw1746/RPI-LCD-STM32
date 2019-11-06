@@ -46,7 +46,7 @@ Upload method: STLink
 ## Software Installation
 ### STM32duino
 - STM32duino is an Arduino Core for the Maple Mini and other STM32 F1 and F4 boards.
-- See https://wiki.stm32duino.com/index.php?title=Installation for installation details.
+- See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for installation details.
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
