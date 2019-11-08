@@ -45,8 +45,25 @@ Upload method: STLink
 
 ## Software Installation
 ### STM32duino
-- STM32duino is an Arduino Core for the Maple Mini and other STM32 F1 and F4 boards.
-- See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for installation details.
+- STM32duino is the official ST Arduino Core for the Maple Mini and other STM32 boards. See    https://github.com/stm32duino/wiki/wiki/Getting-Started for installation details.  
+-You also need to download the STM32CubeProgrammer utility from ST website in order to upload sketches using ST-Link.  
+- After installing ST core, configure IDE under Tools -> Board:  
+![Board](images/IDEToolsBoard.png)
+- Using the IDE Library Manager, install Waveshare ILI9486 SPI driver for Arduino.  
+- Change following lines in ...\libraries\Waveshare_ILI9486\srcDEV_Config.h to:  
+**#define LCD_CS PA4  
+#define LCD_RST PA1  
+#define LCD_DC PA0**
+- Upload the sketch Examples -> ws_graphicstest to the STM32. A test video is available below.  
+[![ws_graphicstest output](images/ws_grtestvid.png)](https://www.youtube.com/watch?v=SBt1b_uSJ9I)
+
+### Roger Clark's Arduino STM32
+- This was the original STM32duino project by Roger Clark but has since been passed over to ST.  
+- It is recommended to use the official ST core though it is not as fast as the RC core but RC core
+is no longer actively maintained.  
+- See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for RC core installation details.  
+-The rest of this document refers to code that was developed under RC core(it was the only STM32 core available back then).  
+
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
