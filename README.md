@@ -54,7 +54,7 @@ The STM32 is programmed using a cheap ST-Link device found in ebay.
 [![ws_graphicstest output](images/ws_grtestvid.png)](https://www.youtube.com/watch?v=SBt1b_uSJ9I)
 
 ### Roger Clark's Arduino STM32
-- This was the original STM32duino project by Roger Clark but has since been passed over to ST.  
+- This is the original STM32duino project by Roger Clark but has since been handed over to ST.  
 - It is recommended to use the official ST core though it is not as fast as the RC core but RC core
 is no longer actively maintained.  
 - See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for RC core installation details.  
