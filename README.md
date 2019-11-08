@@ -25,6 +25,8 @@ The female header is numbered according to layout below(view from back of displa
 |PA4      |24     |CS0  |
 |PA3      |26     |CS1  |  
 
+ ![Pin-Config](images/pinconfig.png)
+ 
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](images/USBSerialAdapter.png)
 
@@ -43,7 +45,7 @@ The STM32 is programmed using a cheap ST-Link device found in ebay.
 - After installing ST core, configure IDE under Tools -> Board:  
 ![Board](images/IDEToolsBoard.png)
 - Using the IDE Library Manager, install Waveshare ILI9486 SPI driver for Arduino.  
-- Change following lines in ...\libraries\Waveshare_ILI9486\srcDEV_Config.h to:  
+- Change following lines in ...\libraries\Waveshare_ILI9486\src\DEV_Config.h to:  
 **#define LCD_CS PA4  
 #define LCD_RST PA1  
 #define LCD_DC PA0**
