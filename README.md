@@ -36,13 +36,6 @@ The STM32 is programmed using a cheap ST-Link device found in ebay.
 
 ![ST-LINK V2](images/stlinkv2.png)
 
-### Configure the Arduino IDE with STLink as the upload method.
-
-Board: Generic STM32F103C series  
-Variant: STM32F103C8 (20k RAM. 128k Flash)  
-CPU Speed(MHZ): 72Mhz (Normal)  
-Upload method: STLink
-
 ## Software Installation
 ### STM32duino
 - STM32duino is the official ST Arduino Core for the Maple Mini and other STM32 boards. See    https://github.com/stm32duino/wiki/wiki/Getting-Started for installation details.  
@@ -55,6 +48,7 @@ Upload method: STLink
 #define LCD_RST PA1  
 #define LCD_DC PA0**
 - Upload the sketch Examples -> ws_graphicstest to the STM32. A test video is available below.  
+
 [![ws_graphicstest output](images/ws_grtestvid.png)](https://www.youtube.com/watch?v=SBt1b_uSJ9I)
 
 ### Roger Clark's Arduino STM32
@@ -79,6 +73,13 @@ is no longer actively maintained.
 - Clone https://github.com/alw1746/XPT2046_Touchscreen and unzip to your .../Arduino/libraries folder.
 
 ### Arduino Sketches
+Configure the Arduino IDE with STLink as the upload method.  
+
+Board: Generic STM32F103C series  
+Variant: STM32F103C8 (20k RAM. 128k Flash)  
+CPU Speed(MHZ): 72Mhz (Normal)  
+Upload method: STLink  
+
 The sketches should be run in the following order to test and obtain information about the LCD.
 
 1. **[graphicstest.ino](https://github.com/alw1746/Adafruit_ILI9486_STM32/blob/master/examples/graphicstest/graphicstest.ino)** - generate test patterns on the LCD. This verifies LCD-STM32 wiring is correct. If you get a white screen there is a mixup in the wiring, loose connections, insufficient power, etc.  
