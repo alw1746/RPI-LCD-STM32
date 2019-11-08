@@ -25,7 +25,7 @@ The female header is numbered according to layout below(view from back of displa
 |PA4      |24     |CS0  |
 |PA3      |26     |CS1  |  
 
- ![Pin-Config](images/pinconfig.png)
+ ![Pin-Config](images/pinconfig.jpg)
  
 The FTDI USB-serial adapter is only used for debug output.  
   ![USB-serial adapter](images/USBSerialAdapter.png)
