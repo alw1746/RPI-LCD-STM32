@@ -58,7 +58,7 @@ The STM32 is programmed using a cheap ST-Link device found in ebay.
 - It is recommended to use the official ST core though it is not as fast as the RC core but RC core
 is no longer actively maintained.  
 - See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for RC core installation details.  
-#### - Note: The Arduino sketches shown below will not work if you are using the official ST core. They were developed under RC core as it was the only STM32 core available then and have not been ported to ST core.
+#### - Note: The Arduino sketches shown below will not work if you are using the official ST core. They were developed under RC core as it was the only STM32 core available then and have not been ported to ST core. Use the Waveshare ILI9486 SPI driver if you want to port to ST core (refer to ws_graphicstest example before).
 
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
