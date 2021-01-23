@@ -60,6 +60,8 @@ is no longer actively maintained.
 - See https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Installation for RC core installation details.  
 #### - Latest update: The sketches below were developed under Roger Clarke's STM32 core which was the only one available back then. They will not work with the ST core. Try this new driver https://github.com/ImpulseAdventure/Waveshare_ILI9486 if you want to port the sketches to the ST core.
 
+#### - helpful note from lazyan: clone of Waveshare 3.5 display needed an additional 3V on 1st pin (pin assigment according to your scheme) to turn on the backlight. Other connections are the same. Also there is new version of the display firmware (2.0) and no DEV_Config.h file there. All the pin setting are in Waveshare_ILI9486.cpp file. I could also suggest another addition to make touchscreen working: TP_CS = PA3
+
 ### Adafruit GFX library
 - Install from the Arduino IDE library manager.
 ### Adafruit ILI9486 STM32 driver
@@ -93,7 +95,7 @@ The sketches should be run in the following order to test and obtain information
 
 ![LCDcalibrate output](images/LCDcalibrate.jpg)
 
-3. **[TSpaint.ino](https://github.com/alw1746/XPT2046_Touchscreen/blob/master/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller. The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
+3. **[TSpaint.ino](https://github.com/alw1746/XPT2046_Touchscreen/blob/master/examples/TSpaint/TSpaint.ino)** - enhanced version of Adafruit's touchpaint for fun. Plug in values returned by the XPT2046 controller(from LCDcalibrate). The XY values are mapped by the code to pixel coordinates(480x320). Z values(pressure) are used to vary  pen's stroke width. The heavier the pressure, the wider the stroke.
 
    **#define TS_CS_PIN PA3  
    #define TS_MINX 180  
