@@ -1,6 +1,6 @@
 # RPI-LCD-STM32
 
-#### This project is kept for historical reasons only. For my latest work on interfacing Raspberry Pi 3.5 inch TFT to ESP32 and STM32, browse to  https://thehardcoder.weebly.com/driving-rpi-35-inch-tft.html
+#### Note: This project is kept for historical reasons only. For my latest work on interfacing Raspberry Pi 3.5 inch TFT to ESP32 and STM32, browse to  https://thehardcoder.weebly.com/driving-rpi-35-inch-tft.html
 
 Interface a Raspberry Pi 3.5 inch LCD to an STM32F103C8T6 (blue pill) with stm32duino and SPI. The LCD  normally plugs into the RPi's GPIO header(pin 1-26) via a short female header on the back of the display. But in this case, jumper wires are used to connect the 2 devices together. LCD driver software are used together with Arduino sketches to test and show the  workings of the LCD.  
   ![STM32F103C8T6](images/bluepill.png)
